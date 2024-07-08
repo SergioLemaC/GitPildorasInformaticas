@@ -26,5 +26,8 @@ public class ClaseScanner {
         System.out.println("Este es un párrafo añadido desde ramex");
 
         System.out.println("Cambio desde la rama master");
+
+
+        System.out.println("Párrafo desde adicional");
     }
 }
