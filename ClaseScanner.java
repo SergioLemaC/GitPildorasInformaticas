@@ -19,5 +19,9 @@ public class ClaseScanner {
         
         //Maricaditas del Visual Studio
         teclado.close();
+
+
+
+        System.out.println("Este es un párrafo añadido desde ramex");
     }
 }
