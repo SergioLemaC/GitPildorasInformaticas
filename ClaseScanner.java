@@ -19,5 +19,7 @@ public class ClaseScanner {
         
         //Maricaditas del Visual Studio
         teclado.close();
+
+        System.out.println("Entrenando git antes de usar una nueva rama creada");
     }
 }
