@@ -29,5 +29,7 @@ public class ClaseScanner {
 
 
         System.out.println("Párrafo desde adicional");
+
+        System.out.println("Esto lo hago desde la app GitHub en el teléfono");
     }
 }
