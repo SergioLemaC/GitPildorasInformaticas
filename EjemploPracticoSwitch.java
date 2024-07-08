@@ -40,5 +40,8 @@ public class EjemploPracticoSwitch {
         }
         
         System.out.println("Cambios para la rama nuevarama en otro archivo");
+
+        //Maricaditas del Visual Studio
+        teclado.close();
     }
 }
