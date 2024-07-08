@@ -1,3 +1,4 @@
+package POO;
 //Esta es una forma de programar con un solo fichero o archivo
 
 import java.util.Date;

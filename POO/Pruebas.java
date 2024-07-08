@@ -1,3 +1,4 @@
+package POO;
 public class Pruebas {
     public static void main(String[] args) {
         Empleados trabajador1 = new Empleados("Paco");

@@ -1,3 +1,4 @@
+package POO;
 import javax.swing.*;
 
 public class UsoVehiculoPOO{

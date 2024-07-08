@@ -1,3 +1,4 @@
+package POO;
 public class FurgonetaPOO extends CarroPOO{
     private int capacidadCarga;
     private int plazasExtra;
