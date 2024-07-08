@@ -16,5 +16,8 @@ public class ClaseScanner {
         System.out.println("Introduce tu edad: ");
         int edad = teclado.nextInt();
         System.out.println("Hola " + nombre + ", tienes " + edad + " años!.");
+        
+        //Maricaditas del Visual Studio
+        teclado.close();
     }
 }

@@ -38,5 +38,7 @@ public class EjemploPracticoSwitch {
             default:
                 System.out.println("Opción incorrecta");
         }
+        //Maricaditas del Visual Studio
+        teclado.close();
     }
 }

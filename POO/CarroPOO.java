@@ -45,7 +45,7 @@ public class CarroPOO{
     public String dimeDatosGenerales(){
         return "La plataforma del vehículo tiene: " + ruedas + " ruedas, " +
         "mide: " + largo/1000 + " metros, con un ancho de " + ancho + " cm y un peso de " + 
-        pesoPlataforma + " kg.";
+        pesoPlataforma + " kg." + motor;
     }
 
     public void configuraAsientos(String asientosCuero){

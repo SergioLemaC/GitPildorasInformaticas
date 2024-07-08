@@ -19,5 +19,7 @@ public class CondicionalesIfySwitch {
         }else{
             System.out.println("Cuídate");
         }
+        //Maricaditas del Visual Studio
+        teclado.close();
     }
 }

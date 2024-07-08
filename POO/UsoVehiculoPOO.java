@@ -1,5 +1,4 @@
 package POO;
-import javax.swing.*;
 
 public class UsoVehiculoPOO{
     public static void main(String[] args) {
