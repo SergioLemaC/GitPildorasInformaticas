@@ -21,5 +21,8 @@ public class ClaseScanner {
         teclado.close();
 
         System.out.println("Entrenando git antes de usar una nueva rama creada");
+
+
+        System.out.println("Este es un párrafo añadido desde ramex");
     }
 }
