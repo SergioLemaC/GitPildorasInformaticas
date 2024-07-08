@@ -24,5 +24,9 @@ public class ClaseScanner {
 
 
         System.out.println("Este es un párrafo añadido desde ramex");
+
+
+
+        System.out.println("Párrafo desde adicional");
     }
 }
