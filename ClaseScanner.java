@@ -19,5 +19,17 @@ public class ClaseScanner {
         
         //Maricaditas del Visual Studio
         teclado.close();
+
+        System.out.println("Entrenando git antes de usar una nueva rama creada");
+
+
+        System.out.println("Este es un párrafo añadido desde ramex");
+
+        System.out.println("Cambio desde la rama master");
+
+
+        System.out.println("Párrafo desde adicional");
+
+        System.out.println("Esto lo hago desde la app GitHub en el teléfono");
     }
 }

@@ -19,5 +19,16 @@ public class Bucles {
         System.out.println("Bienvenido");
         System.out.println("Commit y pa GitHub papabello");
         System.out.println("Cambio directo desde GitHub");
+        
+        
+        //Master
+        System.out.println("Cambio nuevo en la rama master");
+
+        //Nuevarama     
+        System.out.println("Otro cambio para la rama nuevarama");
+
+        System.out.println("Viva Colombia viva Falcao");
+
+        System.out.println("Probando al fin el commit desde vscode");
     }
 }
