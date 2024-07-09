@@ -1,6 +1,7 @@
 package POO;
 //Esta es una forma de programar con un solo fichero o archivo
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -46,6 +47,8 @@ public class UsoEmpleado {
             e.subeSueldo(5);
         }
 
+        Arrays.sort(misEmpleados);
+
         /*for(int i = 0; i < 3; i++){
             System.out.println("Nombre: " + misEmpleados[i].dameNombre() + 
             " Sueldo: $" + misEmpleados[i].dameSueldo() + " Fecha de alta: " + misEmpleados[i].dameFechaContrato());
@@ -58,7 +61,7 @@ public class UsoEmpleado {
     }
 }
 
-class Empleado{
+class Empleado implements Comparable{
     public Empleado(String nom, double sue, int año, int mes, int dia){
         nombre = nom;
         sueldo = sue;
@@ -97,6 +100,19 @@ class Empleado{
     public void subeSueldo(double porcentaje){
         double aumento = sueldo*porcentaje/100;
         sueldo += aumento;
+    }
+
+    //Sobreescribimos la función compareTo que viene en la interfaz (Comparable)
+    public int compareTo(Object miObject){
+        Empleado otroEmpleado = (Empleado) miObject;
+        if(this.Id<otroEmpleado.Id){
+            return -1;
+        }
+        if(this.Id>otroEmpleado.Id){
+            return 1;
+        }
+
+        return 0;
     }
 
     private String nombre;
