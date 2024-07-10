@@ -43,7 +43,9 @@ public class UsoEmpleado {
             misEmpleados[i].subeSueldo(5);
         }*/
 
-        Empleado directorComercial = new Jefatura("Sandra", 85000, 2012, 05, 05);
+        //Implementando Interfaces
+
+        /*Empleado directorComercial = new Jefatura("Sandra", 85000, 2012, 05, 05);
         Comparable ejemplo = new Empleado("Elizabeth", 95000, 2011, 06, 07);
 
         if(directorComercial instanceof Empleado){
@@ -52,7 +54,9 @@ public class UsoEmpleado {
 
         if(ejemplo instanceof Comparable){
             System.out.println("Implementa la interfaz Comparable");
-        }
+        }*/
+
+        System.out.println(jefaFinanzas.tomarDecisiones("Dar más días de vacaciones a los empleados"));
 
         for(Empleado e: misEmpleados){
             e.subeSueldo(5);
@@ -135,10 +139,14 @@ class Empleado implements Comparable{
 }
 
 //Cortar la cadena de herencia para que no hayan más subclases a partir de esta (final)
-class Jefatura extends Empleado{
+class Jefatura extends Empleado implements Jefes{
     public Jefatura(String nom, double sue, int año, int mes, int dia){
         //Super para llamar al constructor de la clase padre
         super(nom, sue, año, mes, dia);
+    }
+
+    public String tomarDecisiones(String decision){
+        return "Un miembro de la dirección ha tomado la decisión de: " + decision;
     }
 
     public void estableceIncentivo(double b){
