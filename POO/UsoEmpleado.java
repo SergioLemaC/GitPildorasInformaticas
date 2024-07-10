@@ -43,6 +43,17 @@ public class UsoEmpleado {
             misEmpleados[i].subeSueldo(5);
         }*/
 
+        Empleado directorComercial = new Jefatura("Sandra", 85000, 2012, 05, 05);
+        Comparable ejemplo = new Empleado("Elizabeth", 95000, 2011, 06, 07);
+
+        if(directorComercial instanceof Empleado){
+            System.out.println("Es de tipo Jefatura");
+        }
+
+        if(ejemplo instanceof Comparable){
+            System.out.println("Implementa la interfaz Comparable");
+        }
+
         for(Empleado e: misEmpleados){
             e.subeSueldo(5);
         }
