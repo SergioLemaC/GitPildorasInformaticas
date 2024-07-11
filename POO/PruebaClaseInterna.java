@@ -35,7 +35,8 @@ class Reloj{
 
     private int intervalo;
     private boolean sonido;
-
+    
+    //Clase Interna
     private class DameLaHora2 implements ActionListener{
         public void actionPerformed(ActionEvent evento){
             Date ahora = new Date();
