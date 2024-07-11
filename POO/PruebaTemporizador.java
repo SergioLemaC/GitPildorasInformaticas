@@ -1,4 +1,5 @@
 package POO;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -21,5 +22,7 @@ class DameLaHora implements ActionListener{
     public void actionPerformed(ActionEvent e){
         Date ahora = new Date();
         System.out.println("Te doy la hora cada 5 segs: " + ahora);
+        //Para hacer sonar el Sistema Operativo
+        Toolkit.getDefaultToolkit().beep();
     }
 }
