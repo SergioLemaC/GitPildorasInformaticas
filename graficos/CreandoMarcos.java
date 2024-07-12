@@ -1,5 +1,8 @@
 package graficos;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 
 /**
@@ -18,6 +21,31 @@ public class CreandoMarcos {
 
 class MiMarco extends JFrame{
     public MiMarco(){
-        setSize(500, 300);
+        //setSize(500, 300);
+        //setLocation(500,300);
+        
+        //setBounds(500, 300, 550, 250);
+        
+        //setResizable(false);
+        
+        //setExtendedState(Frame.MAXIMIZED_BOTH);
+        
+        Toolkit miPantalla  = Toolkit.getDefaultToolkit();
+        
+        Dimension tamañoPantalla = miPantalla.getScreenSize();
+        
+        int alturaPantalla = tamañoPantalla.height;
+        
+        int anchoPantalla = tamañoPantalla.width;
+        
+        setSize(anchoPantalla, alturaPantalla);
+        
+        setLocation(anchoPantalla/4, alturaPantalla/4);
+        
+        setTitle("Yonki Programón");
+        
+        Image miIcono = miPantalla.getImage("icono.gif");
+        
+        setIconImage(miIcono);
     }
 }
