@@ -37,6 +37,16 @@ class MarcoConDibujos extends JFrame{
 }
 
 class LaminaConFiguras extends JPanel{
+
+    public LaminaConFiguras(){
+        try {
+            imagen = ImageIO.read(new File("graficos/IMG-20200120-WA0002.jpg"));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println("La imagen no se encuentra");
+        }
+    }
+
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         //g.drawRect(50, 50, 200, 200);
@@ -75,15 +85,22 @@ class LaminaConFiguras extends JPanel{
         g2.setColor(new Color(128,90,50).brighter());
         g2.drawString("Curso de Java", 100, 200);
 
-        try {
-            imagen = ImageIO.read(new File("graficos/IMG-20200120-WA0002.jpg"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            System.out.println("La imagen no se encuentra");
-        }
+        int anchoImagen = imagen.getWidth(this);
+        int alturaImagen = imagen.getHeight(this);
 
         g.drawImage(imagen, 200, 200, null);
+        
+        /*g.drawImage(imagen, 0, 0, null);
+         * for(int i=0;i<300;i++){
+         *      for(int j=0;j<200;j++){
+         *          if(i+j>0){
+         *              g.copyArea(0, 0, anchoImagen, alturaImagen, anchoImagen*i, alturaImagen*j);
+         *          }
+         *      }
+         * }
+         */
+
+        g.copyArea(200, 200, anchoImagen, alturaImagen, 100, 100);
     }
     private Image imagen;
-
 }
