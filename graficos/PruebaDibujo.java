@@ -105,4 +105,6 @@ class LaminaConFiguras extends JPanel{
     private Image imagen;
 
     //Un cambio desde la canaima de Leidy
+
+    //Tratando de conectar la terminal con GitHub
 }
