@@ -103,4 +103,6 @@ class LaminaConFiguras extends JPanel{
         g.copyArea(200, 200, anchoImagen, alturaImagen, 100, 100);
     }
     private Image imagen;
+
+    //Un cambio desde la canaima de Leidy
 }
