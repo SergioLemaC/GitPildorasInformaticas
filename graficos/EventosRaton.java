@@ -4,7 +4,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 //import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+//import java.awt.event.MouseMotionListener;
 
 import javax.swing.JFrame;
 
@@ -25,7 +25,7 @@ class MarcoRaton extends JFrame{
     }
 }
 
-class EventosDeRaton extends MouseAdapter implements MouseMotionListener{
+class EventosDeRaton extends MouseAdapter /*implements MouseMotionListener*/{
     public void mouseClicked(MouseEvent e){
         System.out.println("Haz hecho click");
         System.out.println("Coordenada X: " + e.getX() + "\n" +
