@@ -110,3 +110,34 @@ Implements
 (Interface*)WindowFocusListener -->
 	(Function)windowGainedFocus(FocusEvent e) //Desencadena acción cuando una ventana obtiene el foco
 	(Function)windowLostFocus(FocusEvent e) //Desencadena acción cuando una ventana pierde el foco
+
+
+MÚLTIPLES FUENTES DE EVENTO-----------------------------------------------
+
+(Class)AbstractAction --> Implements
+	(Interface)Action
+
+Implements
+(Interface*)Action -->
+	(Function)actionPerformed(ActionEvent e)
+	(Function)setEnabled(boolean b)
+	(Function)isEnabled(boolean b)
+	(Function)putValue(String clave, Object valor)
+	(Function)getValue(String clave)
+	(Function)addPropertyChangedListener(PropertyChangedListener oyente)
+	(Function)removePropertyChangedListener(PropertyChangedListener oyente)
+
+
+ASIGNANDO ACCIONES AL TECLADO---------------------------------------------
+
+(Class)KeyStroke -->
+	(Function)static getKeyStroke(String s)
+
+(Class)InputMap -->
+	(Function)put(KeyStroke, Object)
+
+(Class)JPanel -->
+	(Function)getInputMap(int condición)
+
+(Class)ActionMap -->
+	(Function)put(Object, acción)
