@@ -1,0 +1,112 @@
+EVENTOS-------------------------------------------------------------------
+
+Desencadenante de una acción
+
+Hay que identificar los 3 factores que van a tener lugar cuando se 
+desencadene un evento en la interfaz de usuario
+
+-Qué desencadena la acción: Objeto Evento
+
+-Quién desencadena la acción: Objeto Fuente
+
+-Quién recibe la acción: Objeto Listener
+
+Objeto Evento: EventObjec --> ActionEvent - WindowEvent
+
+Objeto Fuente: (Class*)Jbutton --> (Function*)addActionListener(Objeto listener) //Aquí cae el objeto evento
+
+Objeto Listener: (Class*)Jpanel --> (Interface*)ActionListener --> (Function*)actionPerformed(Objeto Evento)  //Esta función luego recibe el objeto evento
+
+
+EVENTOS DE VENTANA--------------------------------------------------------
+
+Implements
+(Interface*)WindowListener -->
+	(Function)windowActivated(WindowEvent e)
+	(Function)windowClosed(WindowEvent e)
+	(Function)windowClosing(WindowEvent e)
+	(Function)windowDeactivated(WindowEvent e)
+	(Function)windowDeiconified(WindowEvent e)
+	(Function)windowIconified(WindowEvent e)
+	(Function)windowOpened(WindowEvent e)
+
+
+CLASE ADAPTADORA----------------------------------------------------------
+
+Son útiles cuando vas a manejar interfaces que cuentan con varias funciones
+en su interior, porque simplifican el código. Lo que haces es heredar de esa
+clase para así no tener que implementar funciones que no necesites.
+
+(Class)KeyAdapter
+(Class)MouseAdapter
+(Class)WindowAdapter --> Implements
+	(Interface)WindowFocusListener
+	(Interface)WindowListener
+	(Interface)WindowStateListener
+	(Interface)EventListener
+
+Implements
+(Interface*)WindowStateListener -->
+	(Function)windowStateChanged(WindowEvent e)
+
+(Class)WindowEvent -->
+	(Function)getNewState() //Devuelve el nuevo estado de la ventana
+	(Function)getOldState() //Devuelve el estado anterior
+
+
+EVENTOS DE TECLADO--------------------------------------------------------
+
+(Class)KeyAdapter --> Implements
+	(Interface)KeyListener
+
+Implements
+(Interface*)KeyListener -->
+	(Function)keyPressed(KeyEvent e) //Cuando una tecla es presionada
+	(Function)keyReleased(KeyEvent e) //Cuando quitamos el dedo de la tecla
+	(Function)keyTyped(KeyEvent e) //Sucesor de las anteriores, cuando se presiona la tecla y se levanta el dedo dejando de presionar
+
+
+EVENTOS DE RATÓN----------------------------------------------------------
+
+(Class)MouseAdapter --> Implements
+	(Interface)MouseListener
+	(Function)getX()
+	(Function)getY()
+	(Function)getModifiersEx()
+	(Function)getClickCount()
+	(Fields)BUTTON1_DOWN_MASK
+	(Fields)BUTTON2_DOWN_MASK
+	(Fields)BUTTON3_DOWN_MASK
+
+Implements
+(Interface*)MouseListener -->
+	(Function)mouseClicked(MouseEvent e)
+	(Function)mouseEntered(MouseEvent e)
+	(Function)mouseExited(MouseEvent e)
+	(Function)mousePressed(MouseEvent e)
+	(Function)mouseReleased(MouseEvent e)
+
+
+EVENTOS DE FOCO-----------------------------------------------------------
+
+Eso quiere decir qué ventana está seleccionada, es decir, si tenemos dos o
+más ventanas abiertas, pues la que tengamos seleccionada es la que tiene
+el foco.
+
+(Class)FocusAdapter --> Implements
+	(Interface)FocusListener
+
+Implements
+(Interface*)FocusListener -->
+	(Function)focusGained(FocusEvent e) //Desencadena acción cuando obtiene el foco
+	(Function)focusLost(FocusEvent e) //Desencadena acción cuando pierde el foco
+
+EVENTOS DE FOCO CON VENTANAS---------------------
+
+(Class)WindowAdapter --> Implements
+	(Interface)WindowFocusListener
+
+Implements
+(Interface*)WindowFocusListener -->
+	(Function)windowGainedFocus(FocusEvent e) //Desencadena acción cuando una ventana obtiene el foco
+	(Function)windowLostFocus(FocusEvent e) //Desencadena acción cuando una ventana pierde el foco
