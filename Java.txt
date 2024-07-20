@@ -141,3 +141,10 @@ ASIGNANDO ACCIONES AL TECLADO---------------------------------------------
 
 (Class)ActionMap -->
 	(Function)put(Object, acción)
+
+
+LAYOUTS-------------------------------------------------------------------
+
+FlowLayout // Esta la usan las láminas por defecto
+BorderLayout // Dividir el contenedor para colocarlo en las esquinas del frame
+GridLayout // Tomar el contenedor y dividirlo en varias filas y columnas que quedan como celdas
