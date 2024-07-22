@@ -176,3 +176,9 @@ Implements
 	(Function)removeUpdate() //Cuando se elimina texto
 	(Function)insertUpdate() //Cuando se inserta texto
 	(Function)changedUpdate() //Cuando el texto que hay, se modifican alguna de sus propiedades
+
+
+(Class)JTextArea -->
+	(Function)getText() //Devuelve el texto que hay escrito allí
+	(Function)setLineWrap(boolean) //Establece si el área de texto tiene salto de línea o no
+	(Function)getLineWrap() //Decir si el área de texto tiene o no saltos de línea
