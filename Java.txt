@@ -148,3 +148,31 @@ LAYOUTS-------------------------------------------------------------------
 FlowLayout // Esta la usan las láminas por defecto
 BorderLayout // Dividir el contenedor para colocarlo en las esquinas del frame
 GridLayout // Tomar el contenedor y dividirlo en varias filas y columnas que quedan como celdas
+
+
+COMPONENTES SWING---------------------------------------------------------
+
+Componentes para introducir texto
+
+(Class Abstract)JTextComponent -->
+	(Function)void setText(String t) //Establecer texto
+	(Function)void getText() //Obtener el texto
+	(Function)getDocument() //Devuelve un documento (Interface)Document
+
+Extends JTextComponent
+(Class)JTextField //Cuadrito de una línea de texto
+(Class)JTextArea //Cuadro de texto como si fuera descripción
+
+(Interface)Document -->
+	(Function)addDocumentListener() //Esto dispara un evento cuando sufre un cambio (Event)documentEvent()
+
+
+//Clase para gestionar eventos de tipo documento (Document)
+(Class)ReceptoraEvento --> Implements
+	(Interface)DocumentListener()
+
+Implements
+(Interface*)DocumentListener -->
+	(Function)removeUpdate() //Cuando se elimina texto
+	(Function)insertUpdate() //Cuando se inserta texto
+	(Function)changedUpdate() //Cuando el texto que hay, se modifican alguna de sus propiedades
