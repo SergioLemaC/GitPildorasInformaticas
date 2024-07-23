@@ -152,7 +152,7 @@ GridLayout // Tomar el contenedor y dividirlo en varias filas y columnas que que
 
 COMPONENTES SWING---------------------------------------------------------
 
-Componentes para introducir texto
+//Componentes para introducir texto
 
 (Class Abstract)JTextComponent -->
 	(Function)void setText(String t) //Establecer texto
@@ -182,3 +182,17 @@ Implements
 	(Function)getText() //Devuelve el texto que hay escrito allí
 	(Function)setLineWrap(boolean) //Establece si el área de texto tiene salto de línea o no
 	(Function)getLineWrap() //Decir si el área de texto tiene o no saltos de línea
+
+
+//Componente de casilla de verificación
+
+(Class)JCheckBox -->
+	(Function)isSelected()
+	(Function)setSelected(boolean)
+
+
+//Componente de botón de radio
+
+(Class)JRadioButton //Esta clase se instancia por cada botón que vayamos a poner
+(Class)ButtonGroup //Para que luego de construir los botones adquieran el comportamiento de que solo uno
+de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los botones y tengan esa función
