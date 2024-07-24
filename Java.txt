@@ -218,3 +218,8 @@ de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los
 	(Function)addChangeListener(ChangeListener) //Pone a la escucha el componente para detectar cambios en su estado
 
 
+//Componente de texto con botones
+
+(Class)JSpinner -->
+	(Constructor)JSpinner()
+	(Constructor)JSpinner(SpinnerModel modelo) //Nos permite representar otro tipo de valores diferentes
