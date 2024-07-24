@@ -203,3 +203,18 @@ de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los
 (Class)JComboBox -->
 	(Function)addItem() //Agregamos elementos al desplegable
 	(Function)getSelectedItem() //Capturar el elemento seleccionado
+
+
+//Control deslizante, parecido al volumen de los vídeos de YouTube
+
+(Class)JSlider -->
+	(Function)setPaintTicks(boolean)
+	(Function)setMajorTickSpacing(int)
+	(Function)setMinorTickSpacing(int)
+	(Function)setPaintLabels(boolean)
+	(Function)setSnapToTicks(boolean)
+	(Function)getValue() //Devuelve el valor del Slider donde se encuentre
+//Para que responda a eventos
+	(Function)addChangeListener(ChangeListener) //Pone a la escucha el componente para detectar cambios en su estado
+
+
