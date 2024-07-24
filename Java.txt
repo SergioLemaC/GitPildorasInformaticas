@@ -196,3 +196,10 @@ Implements
 (Class)JRadioButton //Esta clase se instancia por cada botón que vayamos a poner
 (Class)ButtonGroup //Para que luego de construir los botones adquieran el comportamiento de que solo uno
 de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los botones y tengan esa función
+
+
+//Componente parecido al Spinner de Android Studio
+
+(Class)JComboBox -->
+	(Function)addItem() //Agregamos elementos al desplegable
+	(Function)getSelectedItem() //Capturar el elemento seleccionado
