@@ -2,6 +2,8 @@ package graficos;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
@@ -12,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextPane;
+import javax.swing.KeyStroke;
 import javax.swing.text.StyledEditorKit;
 
 public class Procesador_PuraPractica {
@@ -73,6 +76,8 @@ class LaminaProcesador extends JPanel{
         JRadioButtonMenuItem veinte = new JRadioButtonMenuItem("20");
         JRadioButtonMenuItem veinticuatro = new JRadioButtonMenuItem("24");
 
+        veinticuatro.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK));
+
         tamañoLetra.add(doce);
         tamañoLetra.add(dieciseis);
         tamañoLetra.add(veinte);
@@ -131,8 +136,12 @@ class LaminaProcesador extends JPanel{
             estilo.add(elemMenu);
 
             if(estilos == Font.BOLD){
+                elemMenu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK));
+
                 elemMenu.addActionListener(new StyledEditorKit.BoldAction());
             }else if(estilos == Font.ITALIC){
+                elemMenu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_K, InputEvent.CTRL_DOWN_MASK));
+
                 elemMenu.addActionListener(new StyledEditorKit.ItalicAction());
             }
         }else if(menu.equals("tamaño")){
