@@ -1,15 +1,15 @@
 package graficos;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 
 import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextPane;
 import javax.swing.text.StyledEditorKit;
@@ -47,10 +47,10 @@ class LaminaProcesador extends JPanel{
         configuraMenu("Courier", "fuente", "Courier", 9, 10);
         configuraMenu("Verdana", "fuente", "Verdana", 9, 10);
 
-        //configuraMenu("Negrita", "estilo", "", Font.BOLD, 1);
-        //configuraMenu("Cursiva", "estilo", "", Font.ITALIC, 1);
+        configuraMenu("Negrita", "estilo", "", Font.BOLD, 1);
+        configuraMenu("Cursiva", "estilo", "", Font.ITALIC, 1);
 
-        JCheckBoxMenuItem negrita = new JCheckBoxMenuItem("Negrita", new ImageIcon("graficos/Maple.gif"));
+        /*JCheckBoxMenuItem negrita = new JCheckBoxMenuItem("Negrita", new ImageIcon("graficos/Maple.gif"));
         JCheckBoxMenuItem cursiva = new JCheckBoxMenuItem("Cursiva", new ImageIcon("graficos/code_70x70.png"));
 
         negrita.addActionListener(new StyledEditorKit.BoldAction());
@@ -99,6 +99,19 @@ class LaminaProcesador extends JPanel{
         miArea = new JTextPane();
 
         add(miArea, BorderLayout.CENTER);
+
+        JPopupMenu emergente = new JPopupMenu();
+
+        JMenuItem negritaE = new JMenuItem("Negrita");
+        JMenuItem cursivaE = new JMenuItem("Cursiva");
+
+        negritaE.addActionListener(new StyledEditorKit.BoldAction());
+        cursivaE.addActionListener(new StyledEditorKit.ItalicAction());
+
+        emergente.add(negritaE);
+        emergente.add(cursivaE);
+        
+        miArea.setComponentPopupMenu(emergente);
     }
 
     public void configuraMenu(String rotulo, String menu, String tipoLetra, int estilos, int tam){
@@ -114,7 +127,7 @@ class LaminaProcesador extends JPanel{
             }else if(tipoLetra.equals("Verdana")){
                 elemMenu.addActionListener(new StyledEditorKit.FontFamilyAction("cambiaLetra" , "Verdana"));
             }
-        }/*else if(menu.equals("estilo")){
+        }else if(menu.equals("estilo")){
             estilo.add(elemMenu);
 
             if(estilos == Font.BOLD){
@@ -122,7 +135,7 @@ class LaminaProcesador extends JPanel{
             }else if(estilos == Font.ITALIC){
                 elemMenu.addActionListener(new StyledEditorKit.ItalicAction());
             }
-        }*/else if(menu.equals("tamaño")){
+        }else if(menu.equals("tamaño")){
             tamaño.add(elemMenu);
 
             elemMenu.addActionListener(new StyledEditorKit.FontSizeAction("cambiaTamaño", tam));
