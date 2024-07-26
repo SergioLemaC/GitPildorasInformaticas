@@ -1,10 +1,12 @@
 package graficos;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class MarcoMenu {
     public static void main(String[] args) {
@@ -37,9 +39,10 @@ class MenuLamina extends JPanel{
         archivo.add(guardar);
         archivo.add(guardarComo);
 
-        JMenuItem cortar = new JMenuItem("Cortar");
-        JMenuItem copiar = new JMenuItem("Copiar");
-        JMenuItem pegar = new JMenuItem("Pegar");
+        JMenuItem cortar = new JMenuItem("Cortar", new ImageIcon("graficos/netbeans.png"));
+        JMenuItem copiar = new JMenuItem("Copiar", new ImageIcon("graficos/Maple.gif"));
+        copiar.setHorizontalTextPosition(SwingConstants.LEFT); //Cambiar de posición el texto por la imagen del ícono
+        JMenuItem pegar = new JMenuItem("Pegar", new ImageIcon("graficos/code_70x70.png"));
         edicion.add(cortar);
         edicion.add(copiar);
         edicion.add(pegar);
