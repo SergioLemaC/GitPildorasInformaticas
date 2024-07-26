@@ -1,13 +1,16 @@
 package graficos;
 
 import java.awt.BorderLayout;
-import java.awt.Font;
 
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextPane;
 import javax.swing.text.StyledEditorKit;
 
@@ -44,13 +47,46 @@ class LaminaProcesador extends JPanel{
         configuraMenu("Courier", "fuente", "Courier", 9, 10);
         configuraMenu("Verdana", "fuente", "Verdana", 9, 10);
 
-        configuraMenu("Negrita", "estilo", "", Font.BOLD, 1);
-        configuraMenu("Cursiva", "estilo", "", Font.ITALIC, 1);
+        //configuraMenu("Negrita", "estilo", "", Font.BOLD, 1);
+        //configuraMenu("Cursiva", "estilo", "", Font.ITALIC, 1);
 
-        configuraMenu("12", "tamaño", "", 9, 12);
+        JCheckBoxMenuItem negrita = new JCheckBoxMenuItem("Negrita", new ImageIcon("graficos/Maple.gif"));
+        JCheckBoxMenuItem cursiva = new JCheckBoxMenuItem("Cursiva", new ImageIcon("graficos/code_70x70.png"));
+
+        negrita.addActionListener(new StyledEditorKit.BoldAction());
+        cursiva.addActionListener(new StyledEditorKit.ItalicAction());
+
+        //CON TODO LO QUE CONSTRUIMOS ARRIBA PUES OBVIAREMOS UNA DE LAS CONDICIONALES DE LA FUNCIÓN -configuraMenu()-
+
+        estilo.add(negrita);
+        estilo.add(cursiva);
+
+        /*configuraMenu("12", "tamaño", "", 9, 12);
         configuraMenu("16", "tamaño", "", 9, 16);
         configuraMenu("20", "tamaño", "", 9, 20);
-        configuraMenu("24", "tamaño", "", 9, 24);
+        configuraMenu("24", "tamaño", "", 9, 24);*/
+
+        ButtonGroup tamañoLetra = new ButtonGroup();
+
+        JRadioButtonMenuItem doce = new JRadioButtonMenuItem("12");
+        JRadioButtonMenuItem dieciseis = new JRadioButtonMenuItem("16");
+        JRadioButtonMenuItem veinte = new JRadioButtonMenuItem("20");
+        JRadioButtonMenuItem veinticuatro = new JRadioButtonMenuItem("24");
+
+        tamañoLetra.add(doce);
+        tamañoLetra.add(dieciseis);
+        tamañoLetra.add(veinte);
+        tamañoLetra.add(veinticuatro);
+
+        doce.addActionListener(new StyledEditorKit.FontSizeAction("cambiaTamaño", 12));
+        dieciseis.addActionListener(new StyledEditorKit.FontSizeAction("cambiaTamaño", 16));
+        veinte.addActionListener(new StyledEditorKit.FontSizeAction("cambiaTamaño", 20));
+        veinticuatro.addActionListener(new StyledEditorKit.FontSizeAction("cambiaTamaño", 24));
+
+        tamaño.add(doce);
+        tamaño.add(dieciseis);
+        tamaño.add(veinte);
+        tamaño.add(veinticuatro);
 
         miBarra.add(fuente);
         miBarra.add(estilo);
@@ -78,7 +114,7 @@ class LaminaProcesador extends JPanel{
             }else if(tipoLetra.equals("Verdana")){
                 elemMenu.addActionListener(new StyledEditorKit.FontFamilyAction("cambiaLetra" , "Verdana"));
             }
-        }else if(menu.equals("estilo")){
+        }/*else if(menu.equals("estilo")){
             estilo.add(elemMenu);
 
             if(estilos == Font.BOLD){
@@ -86,7 +122,7 @@ class LaminaProcesador extends JPanel{
             }else if(estilos == Font.ITALIC){
                 elemMenu.addActionListener(new StyledEditorKit.ItalicAction());
             }
-        }else if(menu.equals("tamaño")){
+        }*/else if(menu.equals("tamaño")){
             tamaño.add(elemMenu);
 
             elemMenu.addActionListener(new StyledEditorKit.FontSizeAction("cambiaTamaño", tam));
