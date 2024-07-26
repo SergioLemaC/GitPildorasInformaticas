@@ -223,3 +223,10 @@ de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los
 (Class)JSpinner -->
 	(Constructor)JSpinner()
 	(Constructor)JSpinner(SpinnerModel modelo) //Nos permite representar otro tipo de valores diferentes
+
+
+//Componentes para crear un menú
+
+(Class)JMenuBar
+(Class)JMenu
+(Class)JMenuItem
