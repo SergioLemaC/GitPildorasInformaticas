@@ -229,4 +229,25 @@ de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los
 
 (Class)JMenuBar
 (Class)JMenu
-(Class)JMenuItem
+(Class)JMenuItem -->
+	(Constructor)JMenuItem(String texto)
+	(Constructor)JMenuItem(String texto, Icon icono) //Nos permite poner una imagen como ícono del item del menú
+	(Function)setAccelerator(KeyStroke object)
+
+
+//Crear menús con checkbox y radiobutton
+
+(Class)JCheckBoxMenuItem
+(Class)JRadioButtonMenuItem
+
+
+//Crear menús emergentes al pulsar click derecho
+
+(Class)JPopupMenu -->
+	(Function)setComponentPopupMenu(Componente c)
+	
+
+//Crear barra de herramientas
+
+(Class)JToolBar -->
+	(Function)add(Action accion)
