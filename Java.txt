@@ -145,9 +145,9 @@ ASIGNANDO ACCIONES AL TECLADO---------------------------------------------
 
 LAYOUTS-------------------------------------------------------------------
 
-FlowLayout // Esta la usan las láminas por defecto
-BorderLayout // Dividir el contenedor para colocarlo en las esquinas del frame
-GridLayout // Tomar el contenedor y dividirlo en varias filas y columnas que quedan como celdas
+(Class)FlowLayout // Esta la usan las láminas por defecto
+(Class)BorderLayout // Dividir el contenedor para colocarlo en las esquinas del frame
+(Class)GridLayout // Tomar el contenedor y dividirlo en varias filas y columnas que quedan como celdas
 
 
 COMPONENTES SWING---------------------------------------------------------
@@ -251,3 +251,33 @@ de ellos pueda estar seleccionado, tenemos q usar esta clase, o para agrupar los
 
 (Class)JToolBar -->
 	(Function)add(Action accion)
+
+
+DISPOSICIONES AVANZADAS--------------------------------------------------
+
+EN CAJA-----------------------------
+//Crea cajas a modo de contenedor, con esta clase caja puede jugar a meter una caja dentro de otra
+(Class)Box -->
+	(Function)createHorizontalBox() //Crear una caja en la cual los elementos que introduzcan en su interior se irán colocando horizontalmente
+	(Function)createVerticalBox() //Crea una caja en la cual los elementos que vayas metiendo dentro se van colocando verticalmente
+	(Function)createVerticalStrut(int height) //Permite determinar la distancia en píxeles que hay entre los elementos que vas colocando en esa caja vertical
+	(Function)createHorizontalStrut(int width) //Permite determinar la distancia en píxeles que hay entre los elementos que vas colocando en esa caja horizontal
+	(Function)createGlue() //Adapta la distancia que hay entre los elementos en el caso de que se redimensione el contenedor
+
+
+EN MUELLE---------------------------
+//
+(Class)SpringLayout -->
+	(Function)putConstraint(String e1, Component c1, int pad, String e2, Component c2)
+
+(Class)Spring -->
+	(Function)static constant(int a, int b, int c)
+
+
+LIBRE-------------------------------
+//Nos permiten colocar los elementos donde queramos, en cualquier parte del contenedor
+
+No se implementa alguna clase, solo una función a la que le pasamos unos parámetros que representan a la posición en el marco o coordenadas
+
+(Function)setLayout(null) //Esto para que no coloque los elementos por defecto
+(Function)setBounds(int x, int y, int ancho, int alto)
