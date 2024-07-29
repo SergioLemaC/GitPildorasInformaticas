@@ -281,3 +281,15 @@ No se implementa alguna clase, solo una función a la que le pasamos unos parám
 
 (Function)setLayout(null) //Esto para que no coloque los elementos por defecto
 (Function)setBounds(int x, int y, int ancho, int alto)
+
+//Clase que se puede usar para reutilizar las propiedades de diseño
+(Interface)LayoutManager -->
+	(Function)addLayoutComponent(String nombre, Component c)
+	(Function)minimumLayoutSize(Container padre)
+	(Function)layoutContainer(Container padre) //Especifica el contenedor donde quieres añadir los elementos
+	(Function)preferredLayoutSize(Container padre)
+	(Function)removeLayoutComponent(Component c)
+
+(Class)Container -->
+	(Function)getComponentCount()
+	(Function)getComponent(int i)
