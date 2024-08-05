@@ -270,6 +270,6 @@ class LaminaProcesador extends JPanel{
 
     private JTextPane miArea;
     private JMenu fuente, estilo, tamaño;
-    private JButton negritaBarra, cursivaBarra, subraBarra, azulBarra, rojoBarra, amarilloBarra, aIzquierda, aCentrado, aDerecha, aJustificado;
+    //private JButton negritaBarra, cursivaBarra, subraBarra, azulBarra, rojoBarra, amarilloBarra, aIzquierda, aCentrado, aDerecha, aJustificado;
     private JToolBar barra;
 }

@@ -293,3 +293,22 @@ No se implementa alguna clase, solo una función a la que le pasamos unos parám
 (Class)Container -->
 	(Function)getComponentCount()
 	(Function)getComponent(int i)
+
+
+VENTANAS EMERGENTES-------------------------------------------------------
+
+//Son ventanas que se abren cuando trabajamos con aplicaciones gráficas
+que se disparan en algún momento
+
+CUADROS DE DIÁLOGO-------------------
+(Class)JOptionPane -->
+	(Function)showInputDialog
+	(Function)showConfirmDialog
+	(Function)showMessageDialog
+	(Function)showOptionDialog
+
+SELECCIÓN DE FICHEROS----------------
+(Class)JFileChooser
+
+SELECTOR DE COLOR--------------------
+(Class)JColorChooser
