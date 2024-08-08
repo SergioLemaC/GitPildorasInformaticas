@@ -3,6 +3,7 @@ package practicas;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -12,13 +13,28 @@ public class LaminaBotones extends JPanel{
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-        ButtonGroup grupo = new ButtonGroup();
+        grupo = new ButtonGroup();
 
         for(int i = 0; i<opciones.length; i++){
             JRadioButton bot = new JRadioButton(opciones[i]);
+
+            bot.setActionCommand(opciones[i]);
+
             add(bot);
             grupo.add(bot);
             bot.setSelected(i == 0);
         }
     }
+
+    public String dameSeleccion(){
+        /*ButtonModel miBoton = grupo.getSelection();
+
+        String s = miBoton.getActionCommand();
+
+        return s;*/
+
+        return grupo.getSelection().getActionCommand();
+    }
+
+    private ButtonGroup grupo;
 }

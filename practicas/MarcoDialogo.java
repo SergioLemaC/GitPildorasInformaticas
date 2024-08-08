@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MarcoDialogo extends JFrame{
     public MarcoDialogo(){
@@ -56,10 +58,22 @@ public class MarcoDialogo extends JFrame{
 
         JButton botonMostrar = new JButton("Mostrar");
 
+        botonMostrar.addActionListener(new AccionMostrar());
+
         laminaMostrar.add(botonMostrar);
 
         add(laminaMostrar, BorderLayout.SOUTH);
         add(laminaCuadricula, BorderLayout.CENTER);
+    }
+
+    private class AccionMostrar implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO Auto-generated method stub
+            System.out.println(laminaTipo.dameSeleccion());
+        }
+        
     }
 
     private LaminaBotones laminaTipo, laminaTipoMsj, laminaMsj, laminaTipoOpcion, laminaOpciones, laminaEntrada;
