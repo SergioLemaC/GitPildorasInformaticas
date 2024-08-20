@@ -312,3 +312,63 @@ SELECCIÓN DE FICHEROS----------------
 
 SELECTOR DE COLOR--------------------
 (Class)JColorChooser
+
+
+
+
+STREAMS-------------------------------------------------------------------
+
+Flujo de bytes-----------------------
+
+Secuencia de entrada
+(Class Abstract)InputStrean -->
+
+Secuencia de salida
+(Class Abstract)OutputStream -->
+
+
+Flujo de caracteres-----------------
+
+Secuencia de entrada
+(Class Abstract)Reader -->
+
+Secuencia de salida
+(Class Abstract)Writer -->
+
+
+BUFFERS-------------------------------
+
+(Class)BufferedReader -->
+	(Function)readLine()
+
+
+STREAMS BYTE-------------------------
+
+(Class)FileInputStream -->
+	(Function)read()
+	(Function)close()
+
+(Class)FileOutputStream -->
+	(Function)write()
+	(Function)close()
+
+
+SERIALIZACIÓN--------------------------
+
+(Interface*)Serializable -->
+	(Class)ObjectOutputStream -->
+		(Function)writeObject()
+
+	(Class)ObjectInputStream -->
+		(Function)readObject()
+
+
+ARCHIVOS Y DIRECTORIOS-----------------------------
+
+(Class)File -->
+	(Function)String getAbsolutePath()
+	(Function)String getPath()
+	(Function)String getCanonicalPath()
+	(Function)Boolean exists()
+	(Function)String[] list()
+	(Function)Boolean isDirectory()
