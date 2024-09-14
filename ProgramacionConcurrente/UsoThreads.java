@@ -98,6 +98,13 @@ class MarcoRebote extends JFrame{
                 System.exit(0);
             }
         });
+
+        ponerBoton(laminaBotones, "Detener", new ActionListener(){
+            public void actionPerformed(ActionEvent evento){
+                detener();
+            }
+        });
+
         add(laminaBotones, BorderLayout.SOUTH);
     }
 
@@ -113,10 +120,17 @@ class MarcoRebote extends JFrame{
 
         Runnable r = new PelotaHilos(pelota, lamina);
 
-        Thread t = new Thread(r);
+        t = new Thread(r);
         t.start();
     }
 
+    public void detener(){
+        //t.stop();
+
+        t.interrupt();
+    }
+
+    Thread t;
     private LaminaPelota lamina;
 
 }
@@ -132,20 +146,24 @@ class PelotaHilos implements Runnable{
     public void run() {
         // TODO Auto-generated method stub
 
-
-        for(int i = 1; i <= 3000; i++){
+        System.out.println("Estado del hilo al comenzar: " + Thread.currentThread().isInterrupted());
+        //for(int i = 1; i <= 3000; i++){
+        //while(!Thread.interrupted()){
+        while(!Thread.currentThread().isInterrupted()){
             pelota.muevePelota(componente.getBounds());
             componente.paint(componente.getGraphics());
 
-            try {
+            /*try {
                 Thread.sleep(4);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }
+            }*/
         }
+        //}
+        //}
 
-
+        System.out.println("Estado del hilo al terminar: " + Thread.currentThread().isInterrupted());
         //throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
     
