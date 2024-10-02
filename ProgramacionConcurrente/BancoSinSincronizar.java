@@ -1,5 +1,6 @@
 package ProgramacionConcurrente;
 
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -25,17 +26,26 @@ class Banco {
         for (int i = 0; i < cuentas.length; i++) {
             cuentas[i] = 2000;
         }
+        //El bloqueo cierreBanco tiene que establecerse en base a una condición
+        saldoSuficiente = cierreBanco.newCondition();
     }
 
-    public void transferencia(int cuentaOrigen, int cuentaDestino, double cantidad) {
-
+    //El hilo entra en la función
+    public void transferencia(int cuentaOrigen, int cuentaDestino, double cantidad) throws InterruptedException {
+        //Bloquea para que no entre un hilo más
         cierreBanco.lock();
 
         try {
+            //Mientras se cumpla esta condición, el hilo permanece a la espera, esto con la función await()
+            while (cuentas[cuentaOrigen] < cantidad) { // Evalúa que el saldo no sea inferior a la transferencia
+                System.out.println("-----------------CANTIDAD INSUFICIENTE: " + cuentaOrigen + " Saldo: $" + cuentas[cuentaOrigen] + "...." + cantidad);
+                //return;
+                //Además de ponerse a la espera, se libera el bloqueo y que entre el siguiente hilo
+                saldoSuficiente.await();
+            }/*else{
+                System.out.println("-------------CANTIDAD OK-------------" + cuentaOrigen);
+            }*/
 
-            if (cuentas[cuentaOrigen] < cantidad) { // Evalúa que el saldo no sea inferior a la transferencia
-                return;
-            }
             System.out.println(Thread.currentThread());
 
             cuentas[cuentaOrigen] -= cantidad; // Dinero que sale de la cuenta origen
@@ -45,6 +55,9 @@ class Banco {
             cuentas[cuentaDestino] += cantidad;
 
             System.out.printf(" Saldo total: %10.2f%n", getSaldoTotal());
+
+            //Despierta a todos los hilos que estaban a la espera para informar de esa operación
+            saldoSuficiente.signalAll();
         } finally {
             cierreBanco.unlock();
         }
@@ -62,6 +75,7 @@ class Banco {
 
     private final double[] cuentas;
     private Lock cierreBanco = new ReentrantLock();
+    private Condition saldoSuficiente;
 }
 
 class EjecucionTransferencias implements Runnable {
