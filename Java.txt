@@ -423,3 +423,11 @@ COLECCIONES---------------------------------------------------------------
 		(Class)LinkedList //Rendimiento inferior al ArrayDeque
 		(Class)ProrityQueue //Para utilizar un Comparator, el primer elemento dependerá de la propiedad elegida
 		(Class)PriorityBlockingQueue //Igual que el anterior pero más eficiente en programación concurrente
+
+
+ITERADORES--------------------------------------
+
+(Interface)Iterator<E> -->
+	(Function)next() //Salta al siguiente elemento de la colección
+	(Function)hasnext() //Devuelve boolean si hay o no un objeto siguiente dentro de la colección
+	(Function)remove() //Elimina objetos de la colección
