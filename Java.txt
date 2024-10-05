@@ -372,3 +372,54 @@ ARCHIVOS Y DIRECTORIOS-----------------------------
 	(Function)Boolean exists()
 	(Function)String[] list()
 	(Function)Boolean isDirectory()
+
+
+
+COLECCIONES---------------------------------------------------------------
+
+(Interface)Collection -->
+	(Interface)Set --> //Permite almacenar una coleccion de elementos no repetidos y sin ordenar
+		(Interface)SortedSet
+	(Interface)List //Pueden estar repetidos e indexados con valores numéricos - sustituto del Array
+	(Interface)Queue //Son las colas, no permite acceso aleatorio y solo se pueden acceder a los elementos que están al inicio o final de la cola, o a ambos
+
+(Interface)Map --> //Permite crear una colección de elementos, que pueden estar repetidos, indexados por clave única arbitraria, osea que en vez de dar índices como en los arrays (posición[0], [1], etcetc), en los Map identificamos esos elementos con una clave que no tiene por qué ser un valor numérico
+	(Interface)SortedMap
+
+
+(Interface)Collection -->
+	(Interface)List -->
+		(Class)ArrayList //Muy rápida accediendo a elementos y se adapta a un gran número de escenarios
+		(Class)LinkedList //Listas enlazadas, y es eficiente agregando y eliminando elementos pero no leyéndolos
+		(Class)Vector //Está como obsoleta, y se usaba más para operaciones de concurrencia (manejo de hilos [Threads])
+		(Class)CopyOnWriteArrayList //Se utiliza en programas concurrentes, y es eficiente en operaciones de lectura, en escritura no tanto
+
+
+(Interface)Collection -->
+	(Interface)Set -->
+		(Class)HashSet //Rápida, no duplicados, no ordenamiento y no acceso aleatorio
+		(Class)LinkedHashSet //Ordenamiendo por entrada, eficiente al acceder pero no al agregar
+		(Class)TreeSet //Ordenado pero poco eficiente
+		(Class)EnumSet //La mejor para objetos de tipo enum
+		(Class)CopyOnWriteArraySet //Específico concurrencia, eficiente lectura pero no para escritura y eliminación
+		(Class)ConcurrentSkipListSet //Específico concurrencia, admite ordenamiento pero con muchos elementos no es eficiente
+
+
+(Interface)Collection -->
+	(Interface)Map -->
+		(Class)HashMap //No ordenamiento pero eficiente
+		(Class)LinkedHashMap //Ordenado por inserción, permite ordemaniento por uso, es eficiente en lectura pero no en escritura
+		(Class)TreeMap //Ordenado por clave pero para nada eficiente
+		(Class)EnumMap //Permite tipos enum como claves y es muy eficiente
+		(Class)WeakHashMap //Utilizado para crear elementos que vaya borrando el sistema si no se usan, y es poco eficiente
+		(Class)HashTable //Considerado obsoleto, utilizado en operaciones de concurrencia
+		(Class)ConcurrentHashMap //Utilizado en concurrencia y no permite nulos
+
+
+(Interface)Collection -->
+	(Interface)Queue -->
+		(Class)ArrayDeque //Gran eficiencia y es la más usada
+		(Class)LinkedBlockingDeque //Utilizado en programación concurrente
+		(Class)LinkedList //Rendimiento inferior al ArrayDeque
+		(Class)ProrityQueue //Para utilizar un Comparator, el primer elemento dependerá de la propiedad elegida
+		(Class)PriorityBlockingQueue //Igual que el anterior pero más eficiente en programación concurrente
