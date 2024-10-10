@@ -431,3 +431,16 @@ ITERADORES--------------------------------------
 	(Function)next() //Salta al siguiente elemento de la colección
 	(Function)hasnext() //Devuelve boolean si hay o no un objeto siguiente dentro de la colección
 	(Function)remove() //Elimina objetos de la colección
+
+
+
+JDBC----------------------------------------------------------------------
+
+(Package)Java.sql
+(Package)Javax.sql
+
+(Class)DriverManager -->
+	(Interface)ResultSet
+	(Interface)Connection
+	(Interface)Statement
+	(Interface)DataSource
