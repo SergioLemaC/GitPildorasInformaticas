@@ -10,17 +10,17 @@ public class ConectaUsuarios {
     public static void main(String[] args) {
         try {
             //MYSQL
-            //Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Sergio011304*");
+            //Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Contraseña");
 
             //ORACLE
             //Primero desde la terminal hay que iniciar el servicio de Oracle "lsnrctl start"
-            //Connection miConexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "Sergio011304*");
+            //Connection miConexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "Contraseña");
 
             //SQLSERVER
-            //Connection miConexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-P70AUTP:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Sergio011304*");
+            //Connection miConexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-P70AUTP:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Contraseña");
 
             //POSTGRESQL
-            Connection miConexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Sergio011304*");
+            Connection miConexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Contraseña");
 
             Statement miStatement = miConexion.createStatement();
 
