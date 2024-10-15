@@ -24,6 +24,11 @@ public class ConectaUsuarios {
 
             Statement miStatement = miConexion.createStatement();
 
+            //Insertar, eliminar o actualizar datos con otra función para no devolver un objeto ResultSet
+            //                      INSERT, UPDATE O DELETE
+            String instruccionSQL = "INSERT INTO USUARIOS (CEDULA, CONTRASEÑA, NOMBRE, APELLIDO, EMAIL, TELEFONO, CARGO, PAIS) VALUES ('dato', 'dato', 'dato', 'dato', 'dato@dato.com', 'dato', 'dato', 'dato')";
+            miStatement.executeUpdate(instruccionSQL);
+
             ResultSet miResultSet = miStatement.executeQuery("SELECT * FROM USUARIOS");
 
             while(miResultSet.next()){
