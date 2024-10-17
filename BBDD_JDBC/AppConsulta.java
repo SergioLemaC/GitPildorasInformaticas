@@ -68,17 +68,17 @@ class MarcoAplicacion extends JFrame{
         //Conexión a BD
         try {
             //MYSQL
-            //miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Contraseña");
+            miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Contraseña");
 
             //ORACLE
             //Primero desde la terminal hay que iniciar el servicio de Oracle "lsnrctl start"
-            //miConexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "Contraseña*");
+            //miConexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "Contraseña");
 
             //SQLSERVER
             //miConexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-P70AUTP:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Contraseña");
 
             //POSTGRESQL
-            miConexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Contraseña");
+            //miConexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Contraseña");
 
             Statement miStatement = miConexion.createStatement();
 
@@ -116,12 +116,34 @@ class MarcoAplicacion extends JFrame{
             resultado.setText("");
 
             String seccion = (String)secciones.getSelectedItem();
+
+            String pais = (String)paises.getSelectedItem();
+
+            if(!seccion.equals("Todos") && pais.equals("Todos")){
         
-            enviaConsulta = miConexion.prepareStatement(consultaCargo);
+                enviaConsultaCargo = miConexion.prepareStatement(consultaCargo);
 
-            enviaConsulta.setString(1, seccion);
+                enviaConsultaCargo.setString(1, seccion);
 
-            resultSet = enviaConsulta.executeQuery();
+                resultSet = enviaConsultaCargo.executeQuery();
+            }else if(seccion.equals("Todos") && !pais.equals("Todos")){
+                enviaConsultaPais = miConexion.prepareStatement(consultaPais);
+
+                enviaConsultaPais.setString(1, pais);
+
+                resultSet = enviaConsultaPais.executeQuery();
+            }else if(!seccion.equals("Todos") && !pais.equals("Todos")){
+                enviaConsultaAmbos = miConexion.prepareStatement(consultaAmbos);
+
+                enviaConsultaAmbos.setString(1, seccion);
+                enviaConsultaAmbos.setString(2, pais);
+
+                resultSet = enviaConsultaAmbos.executeQuery();
+            }else if(seccion.equals("Todos") && pais.equals("Todos")){
+                enviaConsultaTodos = miConexion.prepareStatement(consultaTodos);
+
+                resultSet = enviaConsultaTodos.executeQuery();
+            }
 
             while (resultSet.next()) {
                 resultado.append(resultSet.getString(1));
@@ -142,8 +164,11 @@ class MarcoAplicacion extends JFrame{
     }
 
     private Connection miConexion;
-    private PreparedStatement enviaConsulta;
+    private PreparedStatement enviaConsultaCargo, enviaConsultaPais, enviaConsultaAmbos, enviaConsultaTodos;
     private final String consultaCargo = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS WHERE CARGO=?";
+    private final String consultaPais = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS WHERE PAIS=?";
+    private final String consultaAmbos = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS WHERE CARGO=? AND PAIS=?";
+    private final String consultaTodos = "SELECT * FROM USUARIOS";
     private JComboBox secciones, paises;
     private JTextArea resultado;
 }
