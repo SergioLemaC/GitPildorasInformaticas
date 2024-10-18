@@ -4,12 +4,12 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 
-import MVC.modelo.CargaSecciones;
+import MVC.modelo.CargaMenus;
 import MVC.vista.MarcoAplicacion;
 
-public class ControladorMuestraCargos extends WindowAdapter{
+public class ControladorCargaMenus extends WindowAdapter{
 
-    public ControladorMuestraCargos(MarcoAplicacion elMarco){
+    public ControladorCargaMenus(MarcoAplicacion elMarco){
         this.elMarco = elMarco;
     }
 
@@ -22,12 +22,16 @@ public class ControladorMuestraCargos extends WindowAdapter{
             while (obj.rs.next()) {
                 elMarco.secciones.addItem(obj.rs.getString(1));
             }
+
+            while (obj.rs2.next()) {
+                elMarco.paises.addItem(obj.rs2.getString(1));
+            }
         } catch (SQLException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
     }
  
-    CargaSecciones obj = new CargaSecciones();
+    CargaMenus obj = new CargaMenus();
     private MarcoAplicacion elMarco;
 }

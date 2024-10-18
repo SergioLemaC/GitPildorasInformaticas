@@ -9,7 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import MVC.controlador.ControladorMuestraCargos;
+import MVC.controlador.ControladorBotonEjecuta;
+import MVC.controlador.ControladorCargaMenus;
 
 public class MarcoAplicacion extends JFrame{
     public MarcoAplicacion(){
@@ -42,8 +43,10 @@ public class MarcoAplicacion extends JFrame{
         JButton botonConsulta = new JButton("Consulta");
         add(botonConsulta, BorderLayout.SOUTH);
 
-        addWindowListener(new ControladorMuestraCargos(this));
+        botonConsulta.addActionListener(new ControladorBotonEjecuta(this));
+
+        addWindowListener(new ControladorCargaMenus(this));
     }
     public JComboBox secciones, paises;
-    private JTextArea resultado;
+    public JTextArea resultado;
 }
