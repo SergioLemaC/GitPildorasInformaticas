@@ -168,7 +168,7 @@ class MarcoAplicacion extends JFrame{
     private final String consultaCargo = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS WHERE CARGO=?";
     private final String consultaPais = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS WHERE PAIS=?";
     private final String consultaAmbos = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS WHERE CARGO=? AND PAIS=?";
-    private final String consultaTodos = "SELECT * FROM USUARIOS";
+    private final String consultaTodos = "SELECT CEDULA, NOMBRE, APELLIDO, EMAIL, TELEFONO FROM USUARIOS";
     private JComboBox secciones, paises;
     private JTextArea resultado;
 }
