@@ -15,7 +15,7 @@ public class Conexion {
     public Connection dameConexion(){
         try {
             //MYSQL
-            miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Sergio011304*");
+            miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Contraseña");
 
             //ORACLE
             //Primero desde la terminal hay que iniciar el servicio de Oracle "lsnrctl start"
