@@ -12,7 +12,9 @@ public class CargaSecciones {
         miConexion = new Conexion();
     }
 
-    public String ejecutaConsultas(){
+
+    //ORGÍA DE ERRORES DICE JUAN DÍAZ AKSJKASJKAJKASJKAJKSAKJA
+    /*public String ejecutaConsultas(){
         Usuarios miUsuario = null;
 
         Connection accesoBBDD = miConexion.dameConexion();
@@ -22,17 +24,29 @@ public class CargaSecciones {
 
             rs = cargos.executeQuery("SELECT DISTINCT CARGO FROM USUARIOS");
 
-            while (rs.next()) {
-                miUsuario = new Usuarios();
-                miUsuario.setCargo(rs.getString(1));
-                return miUsuario.getCargo();
-            }
+            //while (rs.next()) {
+                //rs.previous(); //Devuelve el cursor una posición hacia atrás
+            miUsuario = new Usuarios();
+            miUsuario.setCargo(rs.getString(1));
+                //return miUsuario.getCargo();
+            //}
             rs.close();
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return miUsuario.getCargo();
+    }*/
+    public ResultSet ejecutaConsultas(){
+        Connection accesoBBDD = miConexion.dameConexion();
+        try {
+            Statement cargos = accesoBBDD.createStatement();
+            return rs = cargos.executeQuery("SELECT DISTINCT CARGO FROM USUARIOS");
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
     }
 
     Conexion miConexion;
