@@ -20,20 +20,21 @@ public class ActualizaGastos {
 
         try {
             //MYSQL
-            Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Contraseña");
+            //Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Contraseña");
 
             //ORACLE
             //Primero desde la terminal hay que iniciar el servicio de Oracle "lsnrctl start"
-            //miConexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "Contraseña");
+            //Connection miConexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "Contraseña");
 
             //SQLSERVER
             //ASUS
-            //miConexion = DriverManager.getConnection("jdbc:sqlserver://SERGIO:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Contraseña");
+            //Connection miConexion = DriverManager.getConnection("jdbc:sqlserver://SERGIO:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Contraseña");
             //PC
-            //miConexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-P70AUTP:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Contraseña");
+            //Connection miConexion = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-P70AUTP:1433;databaseName=elqsea;trustServerCertificate=true" ,"lemac1nside", "Contraseña");
 
             //POSTGRESQL
-            //miConexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Contraseña");
+            //QLE RISA QUE EN POSTGRESQL FUNCIONA EL PROCEDIMIENTO ALMACENADO PERO AL EVALUAR LAS CONDICIONALES DEL JOPTIONPANE MUESTRA LA VENTANA ERROR CUANDO SÍ HACE LOS UPDATE
+            Connection miConexion = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Sergio011304*");
 
             CallableStatement miSentencia = miConexion.prepareCall("{call ACTUALIZA_GASTO(?, ?)}");
 
